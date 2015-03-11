@@ -9,10 +9,12 @@ import random
 class ModKarunabe(Mod):
     def __init__(
         self,
+        screen_name="karubabu",
         logger=None,
     ):
         Mod.__init__(self, logger)
 
+        self.screen_name = screen_name
         self.basetime = datetime.now()
         self.time_flag = True
 
@@ -22,7 +24,7 @@ class ModKarunabe(Mod):
         """
         screen_name = message["user"]["screen_name"]
         # flags
-        name_flag = screen_name == "karubabu"
+        name_flag = screen_name == self.screen_name
 
         if not self.time_flag:
             time_diff = (datetime.now() - self.basetime).seconds
@@ -51,10 +53,12 @@ class ModKarunabe(Mod):
             ["".join(random.choice(["ﾌﾞ"] + list("ﾁﾐﾘ")) for _ in range(100))]
 
         random.shuffle(texts)
-        formated_texts = ["@{} {}".format("karubabu", text) for text in texts]
+        formated_texts = [
+            "@{} {}".format(self.screen_name, text) for text in texts
+        ]
 
         return [
-            (1.0, text.format("karubabu"), "karunabe",
+            (1.0, text, "karunabe",
              {"in_reply_to_status_id": message["id"]}
              )
             for text in formated_texts
