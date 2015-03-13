@@ -18,7 +18,7 @@ class ModKarunabe(Mod):
         self.basetime = datetime.now()
         self.time_flag = False
 
-    def is_fire(self, message, master) -> bool:
+    def is_utterance_needed(self, message, master) -> bool:
         """
         3600 秒後のツイートでﾌﾞﾁﾐﾘする。
         """
@@ -41,7 +41,7 @@ class ModKarunabe(Mod):
         else:
             return False
 
-    def reses(self, message, master):
+    def utter(self, message, master):
         base = (
             "うおおおおおおおおおおおおあああああああああ"
             "あああああああああああああああああああああ！！！"
