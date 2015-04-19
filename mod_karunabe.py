@@ -51,6 +51,9 @@ class ModKarunabe(Mod):
 
         texts = [base + "ｯ"*i for i in range(3)] + \
             ["".join(random.choice(["ﾌﾞ"] + list("ﾁﾐﾘ")) for _ in range(100))]
+        texts += [
+            "青菜に塩なう😔（悪い印象を与えた）",
+        ]
 
         random.shuffle(texts)
         formated_texts = [
