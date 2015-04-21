@@ -53,6 +53,7 @@ class ModKarunabe(Mod):
             ["".join(random.choice(["ﾌﾞ"] + list("ﾁﾐﾘ")) for _ in range(100))]
         texts += [
             "青菜に塩なう😔（悪い印象を与えた）",
+            "早く3月にならないかな（´-`）.｡oO",
         ]
 
         random.shuffle(texts)
