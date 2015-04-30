@@ -55,6 +55,7 @@ class ModKarunabe(Mod):
             "青菜に塩なう😔（悪い印象を与えた）",
             "早く3月にならないかな（´-`）.｡oO",
             "人生はおとぎ話のようですっ",
+            "sanuzeeeeeeeeeeee!!!!!!!!!!!!!",
         ]
 
         random.shuffle(texts)
